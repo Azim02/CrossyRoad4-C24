@@ -27,42 +27,32 @@ function setup() {
 
   //creating the canvas
   createCanvas(displayWidth,2000);
-
-    //creating Grasses for player's rest
- for (var i = 0; i < 6; i++){
-
-  var bottomGrass1 = createSprite(683,height-50-(i*400),width,grassHeight);
-  if (i % 2 === 0)
-  {
-    var road = createSprite(683,height-150-(i*400)-grassHeight,width,300);
-    road.shapeColor = "black";    
-  }
-  bottomGrass1.shapeColor = "green";
-}
-
-//creating car rows
-for (var i = 0; i < 40; i++){
-  cars = new Car(2);
- 
-}
-
-//creating log rows
-for (var i = 0; i < 40; i++){
-  logs = new Log(2);
- 
-}
-
-  //creating player object of Player class
-  player = new Player(width/2, height-25);
-
-  city = createSprite(width/2, -1500);
-  city.addAnimation("city", cityAnimation);
-
-  //creating carGroup1 and logGroup1
-  carGroup1 = new Group();
+ carGroup1 = new Group();
   logGroup1 = new Group();
+  
+  //Grasses where player can rest
+  for(var i=0;i<6;i++){
+    var bottomGrass1 = createSprite(683,height-50-(i*400),width,grassHeight);
+    if(i%2===0)//adding road
+    {
+     var road= createSprite(683,height-150-(i*400)-grassHeight,width,300,)
+      road.shapeColor="black";
+    }
+    bottomGrass1.shapeColor = "green";
+  }
+  //To create rows of car
+   for(var i = 0; i < 40; i++){
+     cars = new Car(2);
+     carGroup1.add(cars.spt);
+   }
+  //To create rows of Logs
+    for(var i = 0; i < 40; i++){
+      log = new Log(-3);
+      logGroup1.add(log.spt);
+    }
 
- }
+   //create player
+   player = new Player(width/2,height-75);
 
  // draw function
 function draw() {
