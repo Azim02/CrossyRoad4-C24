@@ -53,6 +53,11 @@ function setup() {
 
    //create player
    player = new Player(width/2,height-75);
+  
+  //creating city
+  city=createSprite(width/2,-1500);
+  city.addAnimation("city",cityAnimation);
+}
 
  // draw function
 function draw() {
