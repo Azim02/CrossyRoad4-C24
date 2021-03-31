@@ -118,7 +118,7 @@ if (gameState === "Win"){
 }
  
 carGroup1.add(cars.spt);
-logGroup1.add(logs.spt);
+logGroup1.add(log.spt);
 
 //calling fubnction keyPressed
 keyPressed();
